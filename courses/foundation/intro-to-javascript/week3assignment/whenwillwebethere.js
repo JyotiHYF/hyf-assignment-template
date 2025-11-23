@@ -1,10 +1,12 @@
-function travelTime() {
-  const speed = 50;
-  const distance = 432;
-  const totalHours = distance / speed;
+const travelInformation={
+   speed : 50,
+  distance: 432,};
+function travelTime(info)
+{
+  const totalHours = info.distance / info.speed;
   const hours = Math.floor(totalHours);
   const minutes = Math.round((totalHours - hours) * 60);
   console.log(`Travel time is ${hours} hours and ${minutes} minutes.`);
 }
 
-travelTime();
+conole.log(travelTime(info));
