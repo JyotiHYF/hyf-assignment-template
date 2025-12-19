@@ -2,6 +2,7 @@ import express from "express";
 import knex from "knex";
 
 const app = express();
+app.use(express.json()); // REQUIRED for POST & PUT
 
 // Knex setup
 const db = knex({
@@ -62,7 +63,7 @@ app.get("/", (req, res) => {
 });
 
 /**
- * GET ALL USERS
+ * LIST USERS (READ ALL)
  */
 app.get("/users", async (req, res) => {
   const users = await db("users").select("*");
@@ -70,11 +71,71 @@ app.get("/users", async (req, res) => {
 });
 
 /**
+ * FETCH ONE USER (READ ONE)
+ */
+app.get("/users/:id", async (req, res) => {
+  const user = await db("users").where({ id: req.params.id }).first();
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  res.json(user);
+});
+
+/**
+ * CREATE USER
+ */
+app.post("/users", async (req, res) => {
+  const { name, email } = req.body;
+
+  if (!name || !email) {
+    return res.status(400).json({ error: "Name and email are required" });
+  }
+
+  const [id] = await db("users").insert({ name, email });
+  const user = await db("users").where({ id }).first();
+
+  res.status(201).json(user);
+});
+
+/**
+ * UPDATE USER
+ */
+app.put("/users/:id", async (req, res) => {
+  const { name, email } = req.body;
+
+  const updated = await db("users")
+    .where({ id: req.params.id })
+    .update({ name, email });
+
+  if (!updated) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  const user = await db("users").where({ id: req.params.id }).first();
+  res.json(user);
+});
+
+/**
+ * DELETE USER
+ */
+app.delete("/users/:id", async (req, res) => {
+  const deleted = await db("users").where({ id: req.params.id }).del();
+
+  if (!deleted) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  res.status(204).send();
+});
+
+/**
  * USER COUNT
  */
 app.get("/user-count", async (req, res) => {
   const result = await db("users").count("id as count");
-  res.json(result[0]);
+  res.json({ count: Number(result[0].count) });
 });
 
 app.listen(3000, () => {
