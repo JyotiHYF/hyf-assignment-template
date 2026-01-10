@@ -1,11 +1,9 @@
 console.log("Script loaded");
 
 const products = getAvailableProducts();
-console.log(products);
 
 function renderProducts(products) {
-  const ul = document.querySelector("ul");
-  ul.innerHTML = "";
+  const productsList = document.querySelector("#products-list");
 
   products.forEach((product) => {
     const li = document.createElement("li");
@@ -16,7 +14,10 @@ function renderProducts(products) {
       Rating: ${product.rating}
     `;
 
-    ul.appendChild(li);
+    productsList.appendChild(li);
   });
 }
+
 renderProducts(products);
+
+
