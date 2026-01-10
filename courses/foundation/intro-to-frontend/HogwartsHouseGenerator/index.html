@@ -2,18 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hogwarts House Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Hogwarts House Generator 🧙‍♂️</h1>
 
-    <input type="text" id="nameInput" placeholder="Enter your name" />
-    <br /><br />
-    <button id="sortButton">Sort me into a house</button>
-    <button id="tryAgainButton">Try Again</button>
+    <input
+      type="text"
+      id="nameInput"
+      class="name-input"
+      placeholder="Enter your name"
+    />
 
-    <p id="result"></p>
+    <button type="button" id="sortButton">Sort me into a house</button>
+
+    <ul id="houseOutput"></ul>
 
     <script src="script.js"></script>
   </body>
