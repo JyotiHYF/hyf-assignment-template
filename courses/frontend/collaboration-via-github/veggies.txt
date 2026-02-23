@@ -1,7 +1,7 @@
 Carrot
 Broccoli
-Cabbage      ← modified 3rd veggie
+Zucchini
 Potato
 Tomato
-Onion        ← new
-Pepper 
+Onion
+Pepper
