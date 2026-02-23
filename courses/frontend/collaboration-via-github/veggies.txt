@@ -1,5 +1,7 @@
 Carrot
 Broccoli
-Spinach
+Cabbage      ← modified 3rd veggie
 Potato
 Tomato
+Onion        ← new
+Pepper 
