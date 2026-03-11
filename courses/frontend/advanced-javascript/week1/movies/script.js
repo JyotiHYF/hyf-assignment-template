@@ -45597,4 +45597,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     showCards(result);
   });
+  document.getElementById("avgRatingBtn").addEventListener("click", () => {
+    const avg = (
+      taggedMovies.reduce((sum, m) => sum + m.rating, 0) / taggedMovies.length
+    ).toFixed(2);
+    showText("Average Rating: ${avg}");
+  });
 });
