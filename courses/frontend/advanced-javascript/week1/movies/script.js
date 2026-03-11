@@ -45603,4 +45603,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toFixed(2);
     showText("Average Rating: ${avg}");
   });
+  document.getElementById("ratingCountBtn").addEventListener("click", () => {
+    const counts = taggedMovies.reduce(
+      (acc, m) => {
+        if (m.rating >= 7) acc.good++;
+        else if (m.rating >= 4) acc.average++;
+        else acc.bad++;
+        return acc;
+      },
+      { good: 0, average: 0, bad: 0 },
+    );
+    showText(
+      "Rating Counts: Good=${counts.good}, Average=${counts.average}, Bad=${counts.bad}, ); }",
+    );
+  });
 });
