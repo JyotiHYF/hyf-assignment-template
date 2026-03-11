@@ -45573,4 +45573,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ).length;
     showText(`1980s Movies Count: ${count}`);
   });
+  document.getElementById("tagBtn").addEventListener("click", () => {
+    showCards(taggedMovies);
+  });
 });
