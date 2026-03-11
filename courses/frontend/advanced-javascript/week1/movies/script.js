@@ -45590,4 +45590,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     showText("Keyword Count: ${count}");
   });
+  document.getElementById("dupWordBtn").addEventListener("click", () => {
+    const result = taggedMovies.filter((m) => {
+      const words = m.title.toLowerCase().split(/\W+/);
+      return words.some((w) => words.indexOf(w) !== words.lastIndexOf(w));
+    });
+    showCards(result);
+  });
 });
