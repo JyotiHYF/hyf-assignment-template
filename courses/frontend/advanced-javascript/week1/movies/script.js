@@ -45576,4 +45576,18 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("tagBtn").addEventListener("click", () => {
     showCards(taggedMovies);
   });
+  document.getElementById("ratingsBtn").addEventListener("click", () => {
+    const result = taggedMovies.filter((m) => m.rating > 6);
+    showCards(result);
+  });
+  document.getElementById("keywordBtn").addEventListener("click", () => {
+    let count = 0;
+    taggedMovies.forEach((m) => {
+      const title = m.title.toLowerCase();
+      keywords.forEach((k) => {
+        if (title.includes(k)) count++;
+      });
+    });
+    showText("Keyword Count: ${count}");
+  });
 });
