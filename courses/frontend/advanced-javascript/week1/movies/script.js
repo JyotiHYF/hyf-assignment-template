@@ -44590,3 +44590,6 @@ const shortTitleMovies = movies.filter(
 document.getElementById("short").innerText = shortTitleMovies
   .map((m) => m.title)
   .join(", ");
+
+const longTitles = movies.map((m) => m.title).filter((t) => t.length > 20);
+document.getElementById("long").innerText = longTitles.join(", ");
