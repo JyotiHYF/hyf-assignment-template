@@ -45566,4 +45566,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = taggedMovies.filter((m) => m.title.length > 20);
     showCards(result);
   });
+  // 3. 1980s Movies Count
+  document.getElementById("eightiesBtn").addEventListener("click", () => {
+    const count = taggedMovies.filter(
+      (m) => m.year >= 1980 && m.year <= 1989,
+    ).length;
+    showText(`1980s Movies Count: ${count}`);
+  });
 });
