@@ -19,3 +19,20 @@ logAfterDelay(4, "Hello after 4 seconds");
 document.getElementById("delayBtn").addEventListener("click", function () {
   logAfterDelay(5, "Called after 5 seconds");
 });
+
+// Function that logs Earth and Saturn
+const logEarth = function () {
+  console.log("Earth");
+};
+
+const logSaturn = function () {
+  console.log("Saturn");
+};
+
+function logPlanet(planetLogFunction) {
+  planetLogFunction();
+}
+
+// Call the function
+logPlanet(logEarth);
+logPlanet(logSaturn);
