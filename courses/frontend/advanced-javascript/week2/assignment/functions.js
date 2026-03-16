@@ -13,3 +13,9 @@ function logAfterDelay(delay, stringToLog) {
 // Calling the function
 logAfterDelay(2, "Hello after 2 seconds");
 logAfterDelay(4, "Hello after 4 seconds");
+
+// Adding event listener to the button
+
+document.getElementById("delayBtn").addEventListener("click", function () {
+  logAfterDelay(5, "Called after 5 seconds");
+});
