@@ -10,7 +10,7 @@ function logAfterDelay(delay, stringToLog) {
   }, delay * 1000);
 }
 
-// Calling the function
+// Calling the functiona
 logAfterDelay(2, "Hello after 2 seconds");
 logAfterDelay(4, "Hello after 4 seconds");
 
@@ -36,3 +36,12 @@ function logPlanet(planetLogFunction) {
 // Call the function
 logPlanet(logEarth);
 logPlanet(logSaturn);
+
+// Geolocation
+
+document.getElementById("locationBtn").addEventListener("click", () => {
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log("Latitude:", position.coords.latitude);
+    console.log("Longitude:", position.coords.longitude);
+  });
+});
