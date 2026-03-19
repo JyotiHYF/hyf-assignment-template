@@ -10,7 +10,7 @@ function logAfterDelay(delay, stringToLog) {
   }, delay * 1000);
 }
 
-// Calling the functiona
+// Calling the function
 logAfterDelay(2, "Hello after 2 seconds");
 logAfterDelay(4, "Hello after 4 seconds");
 
@@ -21,14 +21,13 @@ document.getElementById("delayBtn").addEventListener("click", function () {
 });
 
 // Function that logs Earth and Saturn
-const logEarth = function () {
-  console.log("Earth");
+const logEarth = () => {
+  document.getElementById("planets").textContent = "Earth";
 };
 
-const logSaturn = function () {
-  console.log("Saturn");
+const logSaturn = () => {
+  document.getElementById("planets").textContent = "Saturn";
 };
-
 function logPlanet(planetLogFunction) {
   planetLogFunction();
 }
@@ -58,19 +57,15 @@ document.getElementById("locationBtn").onclick = function () {
 const runAfterDelay = (delay, callback) => setTimeout(callback, delay * 1000);
 
 document.getElementById("btn").onclick = () => {
-  const delay = document.getElementById("delayInput").value;
-
+  const delay = parseFloat(document.getElementById("delayInput").value);
   runAfterDelay(delay, () => {
-    document.getElementById("output").textContent = "Done!";
+    document.getElementById("output").textContent =
+      `Done after ${delay} seconds!`;
   });
 };
 // Double click event listener
-let lastClick = 0;
-document.addEventListener("click", () => {
-  if (Date.now() - lastClick < 500) {
-    document.getElementById("msg").textContent = "double click!";
-  }
-  lastClick = Date.now();
+document.addEventListener("dblclick", () => {
+  document.getElementById("msg").textContent = "double click!";
 });
 // Joke creator function
 const jokeCreator = (shouldTellFunnyJoke, logFunnyJoke, logBadJoke) =>
@@ -85,16 +80,19 @@ const logBadJoke = () => {
   document.getElementById("joke").textContent =
     "I told my computer a joke… it didn’t laugh 😐";
 };
+document.getElementById("funnyJokeBtn").addEventListener("click", () => {
+  jokeCreator(true, logFunnyJoke, logBadJoke);
+});
 
-// Example calls
-jokeCreator(true, logFunnyJoke, logBadJoke);
-jokeCreator(false, logFunnyJoke, logBadJoke);
+document.getElementById("badJokeBtn").addEventListener("click", () => {
+  jokeCreator(false, logFunnyJoke, logBadJoke);
+});
 
 // 3.1 Array with functions
 const functionsArray = [
-  () => console.log("Function 1"),
-  () => console.log("Function 2"),
-  () => console.log("Function 3"),
+  () => (document.getElementById("arrayFuncs").textContent += "Function 1, "),
+  () => (document.getElementById("arrayFuncs").textContent += "Function 2, "),
+  () => (document.getElementById("arrayFuncs").textContent += "Function 3"),
 ];
 
 functionsArray.forEach((fn) => fn());
