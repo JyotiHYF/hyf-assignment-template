@@ -89,3 +89,36 @@ const logBadJoke = () => {
 // Example calls
 jokeCreator(true, logFunnyJoke, logBadJoke);
 jokeCreator(false, logFunnyJoke, logBadJoke);
+
+// 3.1 Array with functions
+const functionsArray = [
+  () => console.log("Function 1"),
+  () => console.log("Function 2"),
+  () => console.log("Function 3"),
+];
+
+functionsArray.forEach((fn) => fn());
+
+// 3.2 Function declaration vs function expression
+
+// function declaration
+function sayHello() {
+  console.log("Hello from declaration");
+}
+
+// function expression using const
+const sayHi = () => {
+  console.log("Hello from const function");
+};
+
+// call both
+sayHello();
+sayHi();
+
+// 3.3 Function inside an object
+const myObject = {
+  logMessage: () => console.log("Hello from object function"),
+};
+
+// call function
+myObject.logMessage();
