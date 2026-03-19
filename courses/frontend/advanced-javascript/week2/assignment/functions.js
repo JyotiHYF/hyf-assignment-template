@@ -45,3 +45,47 @@ document.getElementById("locationBtn").addEventListener("click", () => {
     console.log("Longitude:", position.coords.longitude);
   });
 });
+// Open Google Maps with the current location
+document.getElementById("locationBtn").onclick = function () {
+  navigator.geolocation.getCurrentPosition(function (pos) {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+
+    window.open(`https://www.google.com/maps?q=${lat},${lng}`);
+  });
+};
+// Function to run a callback after a delay
+const runAfterDelay = (delay, callback) => setTimeout(callback, delay * 1000);
+
+document.getElementById("btn").onclick = () => {
+  const delay = document.getElementById("delayInput").value;
+
+  runAfterDelay(delay, () => {
+    document.getElementById("output").textContent = "Done!";
+  });
+};
+// Double click event listener
+let lastClick = 0;
+document.addEventListener("click", () => {
+  if (Date.now() - lastClick < 500) {
+    document.getElementById("msg").textContent = "double click!";
+  }
+  lastClick = Date.now();
+});
+// Joke creator function
+const jokeCreator = (shouldTellFunnyJoke, logFunnyJoke, logBadJoke) =>
+  shouldTellFunnyJoke ? logFunnyJoke() : logBadJoke();
+
+const logFunnyJoke = () => {
+  document.getElementById("joke").textContent =
+    "Why don’t programmers like nature? Too many bugs 😂";
+};
+
+const logBadJoke = () => {
+  document.getElementById("joke").textContent =
+    "I told my computer a joke… it didn’t laugh 😐";
+};
+
+// Example calls
+jokeCreator(true, logFunnyJoke, logBadJoke);
+jokeCreator(false, logFunnyJoke, logBadJoke);
