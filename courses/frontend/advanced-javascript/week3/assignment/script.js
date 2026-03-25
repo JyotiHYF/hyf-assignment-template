@@ -16,3 +16,14 @@ async function fetchRates() {
   populateDropdowns();
   calculate();
 }
+function populateDropdowns() {
+  const currencies = Object.keys(rates);
+
+  currencies.forEach(function (currency) {
+    fromCurrency.add(new Option(currency, currency));
+    toCurrency.add(new Option(currency, currency));
+  });
+
+  fromCurrency.value = "EUR";
+  toCurrency.value = "DKK";
+}
