@@ -27,3 +27,30 @@ function populateDropdowns() {
   fromCurrency.value = "EUR";
   toCurrency.value = "DKK";
 }
+function calculate() {
+  const value = amountInput.value;
+  const amount = parseFloat(value);
+
+  if (value === "") {
+    result.textContent = "";
+    return;
+  }
+  if (isNaN(amount) || amount < 0) {
+    result.textContent = "Please enter a valid positive number.";
+    return;
+  }
+
+  const fromRate = rates[fromCurrency.value];
+  const toRate = rates[toCurrency.value];
+
+  const convertedAmount = (amount / fromRate) * toRate;
+
+  result.textContent =
+    amount.toFixed(2) +
+    " " +
+    fromCurrency.value +
+    " = " +
+    convertedAmount.toFixed(2) +
+    " " +
+    toCurrency.value;
+}
