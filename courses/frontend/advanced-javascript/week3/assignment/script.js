@@ -61,3 +61,9 @@ function swapCurrencies() {
 
   calculate();
 }
+amountInput.addEventListener("input", calculate);
+fromCurrency.addEventListener("change", calculate);
+toCurrency.addEventListener("change", calculate);
+document.getElementById("swap").addEventListener("click", swapCurrencies);
+
+fetchRates();
