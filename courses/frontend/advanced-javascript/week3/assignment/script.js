@@ -54,3 +54,10 @@ function calculate() {
     " " +
     toCurrency.value;
 }
+function swapCurrencies() {
+  const temp = fromCurrency.value;
+  fromCurrency.value = toCurrency.value;
+  toCurrency.value = temp;
+
+  calculate();
+}
