@@ -4,9 +4,10 @@ const OurPartners = () => {
     <div className={styles.partners}>
       <p className={styles.label}>OUR PARTNERS</p>
 
-      <h2 className={styles.heading}>
-        We collaborate with progressive, ambitious brands we believe in.
-      </h2>
+      <p className={styles.heading}>
+        We collaborate with some of the most respected names in the space and
+        technology industries to make every journey extraordinary.
+      </p>
 
       <div className={styles.partnerLogos}>
         <img src="/business_partners/alphabet-logo.png" alt="Alphabet" />

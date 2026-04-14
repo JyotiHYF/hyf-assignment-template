@@ -74,8 +74,8 @@
 }
 
 .heading {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 400;
   max-width: 700px;
   line-height: 1.2;
   margin-bottom: 60px;
@@ -147,4 +147,54 @@
 .valueItem p {
   opacity: 0.8;
   line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .crewSection,
+  .partners,
+  .valuesSection {
+    padding: 60px 20px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  /* CREW GRID */
+  .crewGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  .card img {
+    height: 260px;
+  }
+
+  /* PARTNERS */
+  .partnerLogos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .partnerLogos img {
+    max-width: 100px;
+  }
+
+  /* VALUES */
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .number {
+    font-size: 48px;
+  }
+
+  .valueItem h3 {
+    font-size: 20px;
+  }
 }
