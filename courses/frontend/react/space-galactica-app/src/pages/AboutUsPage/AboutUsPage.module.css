@@ -57,3 +57,47 @@
   transform: scale(1.03);
   transition: 0.3s ease;
 }
+
+/*partners*/
+
+.partners {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 600;
+  max-width: 700px;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.partnerLogos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  align-items: center;
+  justify-items: center;
+}
+
+.partnerLogos img {
+  max-width: 140px;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.partnerLogos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
