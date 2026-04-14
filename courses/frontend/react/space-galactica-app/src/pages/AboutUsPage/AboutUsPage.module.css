@@ -101,3 +101,50 @@
   filter: grayscale(0%);
   transform: scale(1.05);
 }
+/*value*/
+.valuesSection {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.valueItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 30px;
+}
+
+.number {
+  font-size: 64px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.valueItem h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.valueItem p {
+  opacity: 0.8;
+  line-height: 1.5;
+}
