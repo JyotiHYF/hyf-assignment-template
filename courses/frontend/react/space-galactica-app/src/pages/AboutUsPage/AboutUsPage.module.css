@@ -3,3 +3,198 @@
   width: 100vw;
   height: 100vh;
 }
+/*crew*/
+.crewSection {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 600px;
+  opacity: 0.8;
+  margin-bottom: 60px;
+  line-height: 1.5;
+}
+
+.crewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+/*partners*/
+
+.partners {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 400;
+  max-width: 700px;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.partnerLogos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  align-items: center;
+  justify-items: center;
+}
+
+.partnerLogos img {
+  max-width: 140px;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.partnerLogos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+/*value*/
+.valuesSection {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.valueItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 30px;
+}
+
+.number {
+  font-size: 64px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.valueItem h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.valueItem p {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .crewSection,
+  .partners,
+  .valuesSection {
+    padding: 60px 20px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  /* CREW GRID */
+  .crewGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  .card img {
+    height: 260px;
+  }
+
+  /* PARTNERS */
+  .partnerLogos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .partnerLogos img {
+    max-width: 100px;
+  }
+
+  /* VALUES */
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .number {
+    font-size: 48px;
+  }
+
+  .valueItem h3 {
+    font-size: 20px;
+  }
+}
