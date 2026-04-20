@@ -37,31 +37,31 @@ export const Footer = () => {
           <SocialMediaItem
             url="https://facebook.com"
             title="Facebook"
-            icon="/social media/facebook.png"
+            icon="/socialmedia/facebook.png"
           />
 
           <SocialMediaItem
             url="https://instagram.com"
             title="Instagram"
-            icon="/social media/instagram.png"
+            icon="/socialmedia/instagram.png"
           />
 
           <SocialMediaItem
             url=""
             title="Tiktok"
-            icon="/social media/tiktok.png"
+            icon="/socialmedia/tiktok.png"
           />
 
           <SocialMediaItem
             url="https://LinkedIn.com"
             title="LinkedIn"
-            icon="/social media/linkedin.png"
+            icon="/socialmedia/linkedin.png"
           />
 
           <SocialMediaItem
             url="https://google.com"
             title="On the streets at night"
-            icon="/social media/chrome.png"
+            icon="/socialmedia/chrome.png"
           />
         </ul>
       </div>
