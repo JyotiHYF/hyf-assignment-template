@@ -17,9 +17,6 @@ export const Footer = () => {
         </p>
         <p>&copy; 2024 Galactica. All rights reserved.</p>
       </div>
-      {/* 🧑🏽‍🚀 Task - Week 2 */}
-      {/* Create a new list for the Pages. */}
-      {/* We need to use the <Link /> component here. */}
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul>
@@ -31,7 +28,6 @@ export const Footer = () => {
           </li>
         </ul>
       </div>
-      {/* Docs for the Link: https://reactrouter.com/api/components/Link#link. */}
 
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
@@ -49,7 +45,7 @@ export const Footer = () => {
           />
 
           <SocialMediaItem
-            url=""
+            url="https://www.tittok.com"
             title="Tiktok"
             icon="/socialmedia/tiktok.png"
           />
