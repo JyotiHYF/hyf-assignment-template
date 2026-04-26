@@ -1,7 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation ,Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
-import { Link } from "react-router-dom";
+
 import SocialMediaItem from "./SocialMediaItem";
 
 export const Footer = () => {
