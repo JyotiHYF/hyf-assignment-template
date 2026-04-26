@@ -6,7 +6,7 @@ export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
 
   const isPlanetInWishlist = (planetName) => {
-    return planetsWishlist.find((p) => p.name === planetName);
+    return planetsWishlist.some((p) => p.name === planetName);
   };
 
   const togglePlanetSelection = (name, thumbnail) => {
