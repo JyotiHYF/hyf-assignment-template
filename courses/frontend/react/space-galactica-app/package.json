@@ -12,7 +12,8 @@
     "dev": "vite",
     "build": "vite build",
     "format": "npx prettier . --write",
-    "check": "npx eslint . --fix"
+    "check": "npx eslint . --fix",
+    "start": "react-scripts start"
   },
   "dependencies": {
     "classnames": "^2.5.1",
