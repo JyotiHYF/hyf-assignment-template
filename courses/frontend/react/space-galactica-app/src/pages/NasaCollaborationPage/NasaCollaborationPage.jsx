@@ -17,7 +17,7 @@ export const NasaCollaboration = () => {
       const roverPhotoResponse = await fetch(NASA_URLs.marsRoverPhoto).then(
         (response) => response.json(),
       );
-      console.log("ROVER DATA:", roverPhotoResponse); // 👈 ADD THIS
+      console.log("ROVER DATA:", roverPhotoResponse);
       setRoverPhoto(roverPhotoResponse);
     };
     const fetchDailyImg = async () => {
