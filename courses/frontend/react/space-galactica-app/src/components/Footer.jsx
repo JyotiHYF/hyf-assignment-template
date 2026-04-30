@@ -1,6 +1,5 @@
-import { useLocation ,Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-
 
 import SocialMediaItem from "./SocialMediaItem";
 
@@ -25,6 +24,9 @@ export const Footer = () => {
           </li>
           <li>
             <Link to="/destination">Destinations</Link>
+          </li>
+          <li>
+            <Link to="/nasa_collaboration">Nasa Collaboration</Link>
           </li>
         </ul>
       </div>
