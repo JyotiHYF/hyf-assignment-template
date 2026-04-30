@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import PlanetCard from "./PlanetCard";
+import { AddWishlistItem } from "./AddWishlistItem";
 
 export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
@@ -30,30 +31,39 @@ export const Destinations = () => {
         <h1>Travel destinations</h1>
         <section className="card">
           <h2>Wishlist</h2>
-          {/* 🧑🏽‍🚀 Task - Week 2 */}
           {planetsWishlist.length === 0 ? (
             <p>No planets in your wishlist :(</p>
           ) : (
             <p>You have {planetsWishlist.length} planets in your wishlist</p>
           )}
 
-          {/* 🧑🏽‍🚀 Task - Week 3 */}
-          {/* Use the AddWishlistItem component here. */}
+          <AddWishlistItem onAddWishlistItem={addPlanetToWishlist} />
+        </section>
 
-          {/* 🧑🏽‍🚀 Task - Week 3
+        <section className={`card ${styles.currentWishlistSection}`}>
           <h3>Your current wishlist</h3>
+
           <div className={styles.wishlistList}>
-            ...
-            Use .map() to display the wishlist planets with the PlanetsWishlistItem component. 
-          </div> 
-          */}
+            {planetsWishlist.map((planet) => (
+              <div key={planet.name} className={styles.wishlistItem}>
+                <img
+                  src={planet.thumbnail}
+                  alt={planet.name}
+                  className={styles.wishlistItemThumbnail}
+                />
+
+                <p>{planet.name}</p>
+
+                <button onClick={() => togglePlanetSelection(planet.name)}>
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
         </section>
         <section className="card">
           <h2>Possible destinations</h2>
-          {/* 🧑🏽‍🚀 Task - Week 2 */}
-          {/* Add all 4 planets: Europa, Moon, Mars, Titan.  */}
-          {/* Use the README.md file for descriptions. */}
-          {/* Create a <PlanetCard /> component, which accepts the following props: name, description, thumbnail, isSelected, togglePlanetSelection */}
+
           <PlanetCard
             name="Europa"
             description="Europa, one of Jupiter’s moons, is an icy world with a hidden ocean beneath its surface. This mysterious moon is a prime candidate for the search for extraterrestrial life, making it a thrilling destination for space explorers."
