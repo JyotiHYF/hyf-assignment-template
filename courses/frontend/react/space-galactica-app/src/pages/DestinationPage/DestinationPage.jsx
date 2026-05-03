@@ -1,28 +1,22 @@
-import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import PlanetCard from "./PlanetCard";
 import { AddWishlistItem } from "./AddWishlistItem";
-
+import { useWishlist } from "../../contexts/WishlistContext";
 export const Destinations = () => {
-  const [planetsWishlist, setPlanetsWishlist] = useState([]);
-
-  const isPlanetInWishlist = (planetName) => {
-    return planetsWishlist.some((p) => p.name === planetName);
-  };
+  const {
+    planetsWishlist,
+    addPlanetToWishlist,
+    removePlanetFromWishlist,
+    isPlanetInWishlist,
+    wishlistCount,
+  } = useWishlist();
 
   const togglePlanetSelection = (name, thumbnail) => {
     if (isPlanetInWishlist(name)) {
       removePlanetFromWishlist(name);
     } else {
-      addPlanetToWishlist(name, thumbnail);
+      addPlanetToWishlist({ name, thumbnail });
     }
-  };
-
-  const addPlanetToWishlist = (name, thumbnail) => {
-    setPlanetsWishlist([...planetsWishlist, { name, thumbnail }]);
-  };
-  const removePlanetFromWishlist = (name) => {
-    setPlanetsWishlist(planetsWishlist.filter((p) => p.name !== name));
   };
 
   return (
@@ -31,13 +25,17 @@ export const Destinations = () => {
         <h1>Travel destinations</h1>
         <section className="card">
           <h2>Wishlist</h2>
-          {planetsWishlist.length === 0 ? (
+          {wishlistCount === 0 ? (
             <p>No planets in your wishlist :(</p>
           ) : (
-            <p>You have {planetsWishlist.length} planets in your wishlist</p>
+            <p>You have {wishlistCount} planets in your wishlist</p>
           )}
 
-          <AddWishlistItem onAddWishlistItem={addPlanetToWishlist} />
+          <AddWishlistItem
+            onAddWishlistItem={(name, thumbnail) =>
+              addPlanetToWishlist({ name, thumbnail })
+            }
+          />
         </section>
 
         <section className={`card ${styles.currentWishlistSection}`}>
@@ -54,7 +52,7 @@ export const Destinations = () => {
 
                 <p>{planet.name}</p>
 
-                <button onClick={() => togglePlanetSelection(planet.name)}>
+                <button onClick={() => removePlanetFromWishlist(planet.name)}>
                   Remove
                 </button>
               </div>
@@ -103,8 +101,3 @@ export const Destinations = () => {
 };
 
 export default Destinations;
-
-// 🧑🏽‍🚀 Task - Week 4 - part 2
-// Hate to break it to you, but you will have to make some changes to the code you already wrote.
-// Now that you have context, grab and use the context data in this.
-// You will need to replace some of the variables and functions with the ones from the context.
