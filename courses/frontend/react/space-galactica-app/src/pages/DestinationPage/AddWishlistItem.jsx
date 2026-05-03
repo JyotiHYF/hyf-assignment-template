@@ -6,10 +6,7 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
   const [thumbnail, setThumbnail] = useState("/destination/image-europa.png");
 
   const onAddItemPressed = () => {
-    onAddWishlistItem({
-      title: name.trim(),
-      thumbnail: thumbnail,
-    });
+    onAddWishlistItem(name.trim(), thumbnail);
     setName("");
   };
 
