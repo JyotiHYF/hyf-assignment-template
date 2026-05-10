@@ -1,0 +1,9 @@
+.container {
+  background-color: #e6f3ff;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.title {
+  color: #1c7ed6;
+}
