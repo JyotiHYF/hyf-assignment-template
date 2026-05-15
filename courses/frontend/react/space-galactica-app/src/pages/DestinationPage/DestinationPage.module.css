@@ -1,6 +1,6 @@
 .app {
   background-color: black;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -113,4 +113,52 @@
   padding: 6px 8px;
 
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .planetCard {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin: var(--spacing-16) 0;
+    padding: var(--spacing-16);
+  }
+
+  .planetCard:nth-child(odd) {
+    margin-inline-start: 0;
+  }
+
+  .planetCard > *:last-child {
+    margin-inline-start: 0;
+  }
+
+  .planetThumbnail {
+    width: 110px;
+    height: 110px;
+    margin: 0 0 var(--spacing-12) 0;
+  }
+
+  .planetDescription {
+    margin-block-end: var(--spacing-12);
+  }
+
+  .wishlistList {
+    grid-template-columns: 1fr;
+  }
+
+  .wishlistItem {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .addWishlistItem {
+    width: 100%;
+    margin: var(--spacing-16) 0;
+    padding: var(--spacing-16);
+  }
+
+  .wishlistItem button {
+    width: 100%;
+  }
 }

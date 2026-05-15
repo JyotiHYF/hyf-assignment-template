@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background-image: url('/home/background-home-desktop.jpg');
+  background-image: url("/home/background-home-desktop.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -37,7 +37,6 @@ p.heroJumbo {
   font-weight: 100;
 }
 
-
 .exploreButton {
   height: 250px;
   width: 250px;
@@ -47,4 +46,29 @@ p.heroJumbo {
   font-size: 30px;
   font-weight: 200;
   letter-spacing: 4px;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  p.heroJumbo {
+    font-size: 64px;
+  }
+
+  .exploreButton {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    font-size: 20px;
+  }
 }
