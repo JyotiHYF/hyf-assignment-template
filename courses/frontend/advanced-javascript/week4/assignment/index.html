@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screenshot Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Website Screenshot Generator</h1>
+      <p class="app-text">
+        Enter a URL for a website and you will get a screenshot of the website.
+      </p>
+
+      <form class="url-form">
+        <label for="url-input">Website URL</label>
+        <input
+          id="url-input"
+          class="url-input"
+          type="text"
+          placeholder="https://example.com"
+          required
+        />
+        <button class="submit-button" type="submit">Submit</button>
+      </form>
+
+      <p class="status"></p>
+
+      <dialog class="modal">
+        <button class="close-button" type="button">x</button>
+        <img class="result-image" alt="Screenshot preview" />
+        <button class="save-button">Save Screenshot</button>
+      </dialog>
+
+      <h2 class="cards-title">Your screenshots</h2>
+      <div class="cards-container"></div>
+    </div>
+    <script src="secret.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
